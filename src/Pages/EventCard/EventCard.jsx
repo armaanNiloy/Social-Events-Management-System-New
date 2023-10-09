@@ -3,6 +3,7 @@ import { saveCard } from "../../utilities/localstorage";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Swal from "sweetalert2";
 
 AOS.init();
 
@@ -33,7 +34,21 @@ const EventCard = ({ oneData }) => {
     console.log(oneData);
     const {id, name, price, description, image, card_color, text_color } = oneData;
     const handleSaveOrder = () =>{
-        saveCard(parseInt(id));
+        const flag = saveCard(parseInt(id));
+        if(flag){
+            Swal.fire({
+                icon: 'success',
+                title: 'Order',
+                text: 'Order added successfully.'
+            })
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Already Added'
+            })
+        }
     }
     return (
         <div style={{backgroundColor: card_color}} data-aos="fade-up" className="card card-compact bg-base-100 shadow-xl">
