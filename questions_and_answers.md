@@ -19,7 +19,8 @@ console.log(greetign);
 <p>
 
 #### Answer: A
-the greeting variable is initialize with let, then an empty object is put on that variable. So, the greating variable have an empty object. If we print the greeting we oviously get an empty object.
+<i>the greeting variable is initialize with let, then an empty object is put on that variable. So, the greating variable have an empty object. If we print the greeting we oviously get an empty object.</i>
+
 
 
 
@@ -45,9 +46,9 @@ sum(1, "2");
 <p>
 
 #### Answer: C
-If we add a string with an integer in javascript we will get a string in return. Here in function take two variable as parameter, then return the summation of a and b. The function is called by an interger 1 and a string '2'. So, according to rules function will concatenate 1 and '2' as '12' and return it.
 
-<i>Write your explanation here</i>
+
+<i>If we add a string with an integer in javascript we will get a string in return. Here in function take two variable as parameter, then return the summation of a and b. The function is called by an interger 1 and a string '2'. So, according to rules function will concatenate 1 and '2' as '12' and return it.</i>
 
 </p>
 </details>
@@ -72,9 +73,9 @@ console.log(food);
 <p>
 
 #### Answer: A
-Here, food in an array and info is an object. Info have one element called favoriteFood what value is taken from food 0 index. In that case food value will never change because if we have to food 0 index value we must to write food[0]= 'something'. So, the food varible value remain as it is.
 
-<i>Write your explanation here</i>
+
+<i>Here, food in an array and info is an object. Info have one element called favoriteFood what value is taken from food 0 index. In that case food value will never change because if we have to food 0 index value we must to write food[0]= 'something'. So, the food varible value remain as it is.</i>
 
 </p>
 </details>
@@ -98,9 +99,9 @@ console.log(sayHi());
 <p>
 
 #### Answer: B
-Since sayHi() function does not sent any value as parameter of name, the name will be remain undefined. As the function return 'Hi there, name' dynamically it will return 'Hi there, undefined'.
 
-<i>Write your explanation here</i>
+
+<i>Since sayHi() function does not sent any value as parameter of name, the name will be remain undefined. As the function return 'Hi there, name' dynamically it will return 'Hi there, undefined'.</i>
 
 </p>
 </details>
@@ -127,9 +128,9 @@ console.log(count);
 <p>
 
 #### Answer: C
-First of all, '0' is equal false and other then '0' every digit is true. In nums value we have one zero and three positive integer. And in forEach loop of nums ever nums value is check, and if it is true, it will add 1 with count and count was initilize as 0. Since we get three positve number, the summation of count must be 0+1+1+1 = 3. That is why in count we get 3.
 
-<i>Write your explanation here</i>
+
+<i>First of all, '0' is equal false and other then '0' every digit is true. In nums value we have one zero and three positive integer. And in forEach loop of nums ever nums value is check, and if it is true, it will add 1 with count and count was initilize as 0. Since we get three positve number, the summation of count must be 0+1+1+1 = 3. That is why in count we get 3.</i>
 
 </p>
 </details>

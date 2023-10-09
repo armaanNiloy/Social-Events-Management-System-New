@@ -1,6 +1,6 @@
 .........................Project Name: Social Events Management System..................................
 
-............. Live Link: 
+............. Live Link: https://event-management-assignm-11bd7.web.app/
 
 .................................... Features of this project...................................
 
