@@ -1,0 +1,57 @@
+[
+    {
+      "id": 1,
+      "name": "Weddings",
+      "image": "wedding.jpg",
+      "price": "$10,000",
+      "description": "Plan your dream wedding with our expert event management services.",
+      "card_color": "#FFD700", 
+      "text_color": "#4B0082"  
+    },
+    {
+      "id": 2,
+      "name": "Birthday Parties",
+      "image": "birthday.jpg",
+      "price": "$500",
+      "description": "Celebrate your special day in style with our birthday party planning.",
+      "card_color": "#FF69B4",
+      "text_color": "#6A5ACD" 
+    },
+    {
+      "id": 3,
+      "name": "Anniversaries",
+      "image": "anniversary.jpg",
+      "price": "$2,000",
+      "description": "Mark your milestones with unforgettable anniversary event coordination.",
+      "card_color": "#87CEEB", 
+      "text_color": "#4169E1"   
+    },
+    {
+      "id": 4,
+      "name": "Engagement Parties",
+      "image": "engagement.jpg",
+      "price": "$800",
+      "description": "Begin your journey to forever with a memorable engagement party.",
+      "card_color": "#FFA07A", 
+      "text_color": "#FF6347"  
+    },
+    {
+      "id": 5,
+      "name": "Retirement Parties",
+      "image": "retirement.jpg",
+      "price": "$1,200",
+      "description": "Bid farewell to your career with a well-organized retirement celebration.",
+      "card_color": "#40E0D0",  
+      "text_color": "#00CED1"  
+    },
+    {
+      "id": 6,
+      "name": "Baby Shower",
+      "image": "babyshower.jpg",
+      "price": "$400",
+      "description": "Welcome your little one with a heartwarming baby shower event.",
+      "card_color": "#FFFFE0",  
+      "text_color": "#FFD700"  
+    }
+  ]
+  
