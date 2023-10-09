@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { saveCard } from "../../utilities/localstorage";
+import Swal from "sweetalert2";
 
 
 const EventDetails = () => {
@@ -8,7 +9,21 @@ const EventDetails = () => {
     const idx = parseInt(id);
     const event = events.find(event => event.id === idx);
     const handleSaveOrder = () =>{
-        saveCard(idx);
+        const flag = saveCard(idx);
+        if(flag){
+            Swal.fire({
+                icon: 'success',
+                title: 'Order',
+                text: 'Order added successfully.'
+            })
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: 'Already Added'
+            })
+        }
     }
     return (
         <div className="hero min-h-screen">

@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { saveCard } from "../../utilities/localstorage";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
 
 AOS.init();
 
@@ -32,9 +34,19 @@ AOS.init({
 
 const EventCard = ({ oneData }) => {
     console.log(oneData);
+    const {user} = useContext(AuthContext);
+    const navigate = useNavigate();
     const {id, name, price, description, image, card_color, text_color } = oneData;
     const handleSaveOrder = () =>{
-        const flag = saveCard(parseInt(id));
+        let flag = false;
+        if(user)
+        {
+            flag  = saveCard(parseInt(id));
+        }
+        else{
+            navigate('/login')
+            return;
+        }
         if(flag){
             Swal.fire({
                 icon: 'success',
