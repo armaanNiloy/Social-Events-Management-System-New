@@ -12,7 +12,7 @@ const Home = () => {
             <div>
                 <img src="/bannar.png" alt="bannar does not found" />
             </div>
-            <div className="grid grid-cols-3 mx-10 gap-5 mt-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 md:mx-10 gap-5 mt-5">
                 {
                     eventData.map(oneData =><EventCard key={oneData.id} oneData={oneData}></EventCard>)
                 }

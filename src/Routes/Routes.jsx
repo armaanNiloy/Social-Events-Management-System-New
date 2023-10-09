@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import Blog from "../Pages/Blog/Blog";
 import About from "../Pages/About/About";
+import Order from "../Pages/Order/Order";
 
 
 const Routes = createBrowserRouter([
@@ -33,8 +34,9 @@ const Routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/blog',
-                element: <PrivateRoutes><Blog></Blog></PrivateRoutes>
+                path: '/order',
+                element: <PrivateRoutes><Order></Order></PrivateRoutes>,
+                loader: () => fetch('/events.json')
             },
             {
                 path: '/about',

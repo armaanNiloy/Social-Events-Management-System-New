@@ -6,7 +6,7 @@ const EventCard = ({ oneData }) => {
     const {id, name, price, description, image } = oneData;
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
-            <figure><img className="h-60 w-full" src={image} alt="Shoes" /></figure>
+            <figure><img className="h-40 lg:h-60 w-full" src={image} alt="no picture" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <p>{description}</p>

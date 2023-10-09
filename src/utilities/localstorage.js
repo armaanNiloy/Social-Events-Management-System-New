@@ -9,7 +9,7 @@ const getStoredData = () =>{
 
 const saveCard = id =>{
     const storedCard = getStoredData();
-    const exists = storedCard.find(donate => donate === id);
+    const exists = storedCard.find(card => card === id);
     if(!exists){
         storedCard.push(id);
         localStorage.setItem('card', JSON.stringify(storedCard))

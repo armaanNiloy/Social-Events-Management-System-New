@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { saveCard } from "../../utilities/localstorage";
 
 
 const EventDetails = () => {
@@ -6,6 +7,9 @@ const EventDetails = () => {
     const events = useLoaderData();
     const idx = parseInt(id);
     const event = events.find(event => event.id === idx);
+    const handleSaveOrder = () =>{
+        saveCard(idx);
+    }
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row-reverse">
@@ -13,7 +17,7 @@ const EventDetails = () => {
                 <div>
                     <h1 className="text-5xl font-bold">{event.name}</h1>
                     <p className="py-6">{event.description}</p>
-                    <button className="btn btn-primary">Order Now</button>
+                    <button onClick={handleSaveOrder} className="btn btn-primary">Order Now</button>
                 </div>
             </div>
         </div>
