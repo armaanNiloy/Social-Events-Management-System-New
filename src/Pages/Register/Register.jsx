@@ -1,19 +1,40 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
-    const handleRegister = e =>{
+    const { createUser } = useContext(AuthContext);
+    const [registerError, setRegisterError] = useState('');
+    const navigate = useNavigate();
+    const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
+        console.log(email, password);
+
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters or longer');
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Your password should have at least one upper case characters.')
+            return;
+        }
+        else if (!/.*[!@#$%^&*]/.test(password)) {
+            setRegisterError('Your password should have at least one special characters.')
+            return;
+        }
+
+
         createUser(email, password)
-        .then(result => console.log(result))
-        .catch(error => console.error(error))
+            .then(result => {
+                console.log(result.user);
+                navigate('/');
+            })
+            .catch(error => console.error(error))
         console.log(name, email, password);
     }
     return (
@@ -46,10 +67,14 @@ const Register = () => {
                                 <p>Already have an account?<Link className="label-text-alt link link-hover text-base text-blue-600" to='/login'>Please Login</Link></p>
                             </label>
                         </div>
+                        {
+                            registerError && <p className="text-red-700">{registerError}</p>
+                        }
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

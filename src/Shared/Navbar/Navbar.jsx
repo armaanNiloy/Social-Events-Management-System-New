@@ -14,6 +14,7 @@ const Navbar = () => {
         <li><NavLink to='/services'>Services</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
     </>
+    console.log(user);
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -34,7 +35,8 @@ const Navbar = () => {
             </div>
             {
                 user ?
-                    <div className="navbar-end">
+                    <div className="navbar-end gap-2">
+                        <h3>{user.displayName || user.email}</h3>
                         <button onClick={handleSignOut} className="btn">Sign Out</button>
                     </div>
                     :
