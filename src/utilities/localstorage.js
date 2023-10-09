@@ -18,4 +18,8 @@ const saveCard = id =>{
     else return false;
 }
 
-export { getStoredData, saveCard}
+const clearStorage = () =>{
+    localStorage.clear();
+}
+
+export { getStoredData, saveCard, clearStorage}

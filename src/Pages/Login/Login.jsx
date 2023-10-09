@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -27,26 +28,33 @@ const Login = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(email, password);
-        
+
         signIn(email, password)
             .then(result => {
-                if(result.user.emailVerified){
-                    notifya();
-                }
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Oops...',
+                    text: 'Something went wrong!'
+                })
                 navigate(location?.state ? location.state : '/');
-                
             })
-            .catch(error => setLoginError(error.message))
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong!',
+                })
+            })
     }
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInGoogle()
-        .then(result =>{
-            console.log(result);
-            navigate(location?.state ? location.state : '/')
-        })
-        .catch(error =>{
-            setLoginError(error);
-        })
+            .then(result => {
+                console.log(result);
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                setLoginError(error);
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">

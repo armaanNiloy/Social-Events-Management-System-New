@@ -13,7 +13,7 @@ const Order = () => {
         setOrders(selectedOrder);
     },[events])
     return (
-        <div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {
                 orders.map(order => <SaveOrder key={order.id} order={order}></SaveOrder>)
             }

@@ -8,12 +8,14 @@ import PrivateRoutes from "./PrivateRoutes";
 import Blog from "../Pages/Blog/Blog";
 import About from "../Pages/About/About";
 import Order from "../Pages/Order/Order";
+import Error from "../Pages/Error/Error";
 
 
 const Routes = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
