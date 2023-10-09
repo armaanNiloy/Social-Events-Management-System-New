@@ -11,7 +11,8 @@ const Navbar = () => {
     }
     const links = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/services'>Services</NavLink></li>
+        <li><NavLink to='/blog'>Blog</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
         <li><NavLink to='/register'>Register</NavLink></li>
     </>
     console.log(user);
@@ -37,6 +38,7 @@ const Navbar = () => {
                 user ?
                     <div className="navbar-end gap-2">
                         <h3>{user.displayName || user.email}</h3>
+                        <img className="rounded-full w-10" src={user.photoURL} alt="" />
                         <button onClick={handleSignOut} className="btn">Sign Out</button>
                     </div>
                     :
