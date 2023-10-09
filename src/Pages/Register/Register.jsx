@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -32,6 +33,11 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Register',
+                    text: 'Successfully Register.'
+                })
                 navigate('/');
             })
             .catch(error => console.error(error))
@@ -70,7 +76,7 @@ const Register = () => {
                             registerError && <p className="text-red-700">{registerError}</p>
                         }
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
 

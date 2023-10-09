@@ -20,7 +20,7 @@ AOS.init({
 
     // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
     offset: 120, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
+    delay: 300, // values from 0 to 3000, with step 50ms
     duration: 400, // values from 0 to 3000, with step 50ms
     easing: 'ease', // default easing for AOS animations
     once: false, // whether animation should happen only once - while scrolling down
@@ -38,6 +38,7 @@ const Home = () => {
             <div>
                 <img src="bannar.png" alt="bannar does not found" />
             </div>
+            <h1 data-aos="fade-down" className="text-2xl md:text-6xl text-center font-bold p-2 md:p-8 text-indigo-700">Our Services</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-5 md:mx-10 gap-5 mt-5">
                 {
                     eventData.map(oneData => <EventCard key={oneData.id} oneData={oneData}></EventCard>)

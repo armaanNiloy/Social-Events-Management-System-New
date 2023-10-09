@@ -1,8 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+
 import Swal from "sweetalert2";
 
 
@@ -12,16 +11,6 @@ const Login = () => {
     const [loginError, setLoginError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
-    const notifya = () => toast.success('Successfully added', {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
     const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -33,17 +22,14 @@ const Login = () => {
             .then(result => {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Oops...',
-                    text: 'Something went wrong!'
+                    title: 'Login',
+                    text: 'Successfully Login.'
                 })
                 navigate(location?.state ? location.state : '/');
             })
             .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong!',
-                })
+                // console.log(error);
+                setLoginError('Invalide email or password');
             })
     }
     const handleGoogleSignIn = () => {
@@ -53,7 +39,11 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-                setLoginError(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Login',
+                    text: 'Somethings went wrong.'
+                })
             })
     }
     return (
@@ -89,18 +79,6 @@ const Login = () => {
                     </form>
                 </div>
             </div>
-            <ToastContainer
-                position="top-center"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-            />
         </div>
     );
 };
